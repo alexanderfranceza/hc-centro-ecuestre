@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -39,9 +40,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <img
+            <Image
               src="/images/about/about-01.jpg"
               alt="HC Centro Ecuestre"
+              width={1200}
+              height={1400}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="
                 w-full
                 h-[500px]

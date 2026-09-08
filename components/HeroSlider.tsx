@@ -16,10 +16,23 @@ const images = [
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const [loaded, setLoaded] = useState<number[]>([0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => {
+        const next = (prev + 1) % images.length;
+
+        setLoaded((previous) => {
+          if (previous.includes(next)) {
+            return previous;
+          }
+
+          return [...previous, next];
+        });
+
+        return next;
+      });
     }, 8000);
 
     return () => clearInterval(interval);
@@ -28,17 +41,21 @@ export default function HeroSlider() {
   return (
     <div className="absolute inset-0 overflow-hidden">
 
-      {images.map((image, index) => (
+      {loaded.map((index) => (
         <motion.div
-          key={image}
+          key={images[index]}
           className="absolute inset-0"
+          initial={{
+            opacity: index === 0 ? 1 : 0,
+            scale: index === 0 ? 1.08 : 1.03,
+          }}
           animate={{
             opacity: current === index ? 1 : 0,
             scale: current === index ? 1.08 : 1,
           }}
           transition={{
             opacity: {
-              duration: 2.5,
+              duration: 2.2,
               ease: "easeInOut",
             },
             scale: {
@@ -47,7 +64,7 @@ export default function HeroSlider() {
             },
           }}
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${images[index]})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const experiences = [
@@ -78,12 +79,7 @@ export default function Experiences() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className={`
-                grid
-                lg:grid-cols-2
-                lg:gap-16
-                items-center
-              `}
+              className="grid lg:grid-cols-2 lg:gap-16 items-center"
             >
 
               {/* IMAGEN */}
@@ -99,9 +95,12 @@ export default function Experiences() {
                   }
                 `}
               >
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
+                  width={1200}
+                  height={1600}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                   className="
                     w-full
                     h-[340px]

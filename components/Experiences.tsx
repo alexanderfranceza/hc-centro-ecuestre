@@ -46,7 +46,7 @@ export default function Experiences() {
   return (
     <section
       id="experiencias"
-      className="bg-[#111111] py-24 sm:py-28 lg:py-36"
+      className="bg-[#111111] text-white py-24 sm:py-28 lg:py-36"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
@@ -62,7 +62,17 @@ export default function Experiences() {
             Experiencias
           </p>
 
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-light mt-5 leading-tight">
+          <h2
+            className="
+              text-white
+              text-4xl
+              sm:text-5xl
+              md:text-7xl
+              font-light
+              mt-5
+              leading-tight
+            "
+          >
             Vive momentos
             <br />
             inolvidables.
@@ -134,12 +144,34 @@ export default function Experiences() {
                 </p>
 
                 {/* Título */}
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight max-w-xl">
+                <h3
+                  className="
+                    text-white
+                    text-3xl
+                    sm:text-4xl
+                    lg:text-5xl
+                    font-light
+                    leading-tight
+                    max-w-xl
+                  "
+                >
                   {item.title}
                 </h3>
 
                 {/* Descripción */}
-                <p className="mt-5 sm:mt-7 text-zinc-400 text-base sm:text-lg lg:text-xl leading-7 sm:leading-9 max-w-lg">
+                <p
+                  className="
+                    mt-5
+                    sm:mt-7
+                    text-zinc-300
+                    text-base
+                    sm:text-lg
+                    lg:text-xl
+                    leading-7
+                    sm:leading-9
+                    max-w-lg
+                  "
+                >
                   {item.description}
                 </p>
 

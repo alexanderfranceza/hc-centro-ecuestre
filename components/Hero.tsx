@@ -14,6 +14,7 @@ export default function Hero() {
         overflow-hidden
         flex
         items-center
+        text-white
       "
     >
       <HeroSlider />
@@ -75,9 +76,10 @@ export default function Hero() {
             HC CENTRO ECUESTRE
           </p>
 
-          {/* Título */}
+          {/* Título principal */}
           <h1
             className="
+              text-white
               text-[2.7rem]
               sm:text-6xl
               md:text-7xl
@@ -99,11 +101,11 @@ export default function Hero() {
               mt-7
               sm:mt-10
               max-w-xl
+              text-white
               text-[15px]
               sm:text-xl
               leading-7
               sm:leading-9
-              text-zinc-300
             "
           >
             Descubre una experiencia privada donde la tradición,
@@ -111,7 +113,7 @@ export default function Hero() {
             recuerdos inolvidables.
           </p>
 
-          {/* Botón de reserva */}
+          {/* Botón */}
           <div
             className="
               mt-9
@@ -147,7 +149,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Indicador solo en escritorio */}
+      {/* Indicador */}
       <div
         className="
           absolute
@@ -156,7 +158,7 @@ export default function Hero() {
           -translate-x-1/2
           z-10
           text-2xl
-          text-white/80
+          text-white
           animate-bounce
           hidden
           lg:block

@@ -87,7 +87,6 @@ export default function Hero() {
               max-w-3xl
             "
           >
-            Vive el
             <br />
             Caballo Peruano
             <br />
